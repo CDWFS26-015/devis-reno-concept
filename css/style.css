@@ -1,0 +1,455 @@
+:root {
+  --primary: #c0392b;
+  --secondary: #e74c3c;
+  --dark: #1e1e1e;
+  --light: #ffffff;
+  --gray: #f4f4f4;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: var(--gray);
+  color: var(--dark);
+}
+
+.header {
+  background: var(--light);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #ddd, #bbb);
+  border-radius: 8px;
+}
+
+/* LIEN LOGO */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.logo-link:hover {
+  color: var(--primary);
+}
+
+.logo-link:visited {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+
+.hero {
+  background: linear-gradient(
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.55)
+  ),
+  linear-gradient(135deg, #c0392b, #e74c3c);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+}
+
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
+  background: black;
+  color: white;
+  padding: 8px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+body.home .services-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.services-grid article {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden; /* pour que l'image et le contenu restent dans le card */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-grid article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.services-grid article img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* image redimensionnée sans déformation */
+  border-bottom: 1px solid #eee;
+}
+
+.services-grid article h3 {
+  margin: 1rem 1rem 0.5rem;
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.services-grid article p {
+  margin: 0 1rem 1rem;
+  flex-grow: 1;
+  color: var(--dark);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.tarifs {
+  padding: 3rem 2rem;
+  background: var(--gray);
+}
+
+.tarifs ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: auto;
+}
+
+.tarifs li {
+  background: white;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-secondary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+form {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+/* Label avec * aligné et champ dessous */
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.label-text {
+  display: inline-flex; /* texte et * sur la même ligne */
+  align-items: center;
+  font-weight: 500;
+}
+
+.required {
+  color: var(--primary);
+  margin-left: 4px;
+  font-weight: bold;
+}
+
+/* Champ obligatoire */
+input:required,
+textarea:required,
+select:required {
+  border: 2px solid var(--primary);
+  padding: 0.6rem;
+  border-radius: 6px;
+  margin-top: 0.25rem; /* espace entre label et champ */
+}
+
+/* Focus sur champ obligatoire */
+input:required:focus,
+textarea:required:focus,
+select:required:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 4px var(--secondary);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input, textarea, select {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* MENU PAR DÉFAUT (DESKTOP) */
+.menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: var(--primary);
+}
+
+.menu a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+}
+
+.burger {
+  display: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+#topBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.3s, transform 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#topBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#topBtn:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+}
+
+#avisForm button[type="submit"] {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s, transform 0.2s;
+  justify-self: center;
+}
+
+#avisForm button[type="submit"]:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .burger {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    margin-top: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    overflow: hidden;
+    }
+
+    .menu li {
+    border-bottom: 1px solid #eee;
+    }
+
+    .menu li:last-child {
+    border-bottom: none;
+    }
+
+    .menu a {
+    padding: 1rem;
+    display: block;
+    text-align: center;
+    font-weight: 500;
+    }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .services-grid article img {
+    height: 180px;
+  }
+
+  .services-grid article h3 {
+    font-size: 1.1rem;
+  }
+
+  .services-grid article p {
+    font-size: 0.9rem;
+  }
+}
+
+footer {
+  background: var(--dark);
+  color: var(--light);
+  padding: 2rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--light);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--primary);
+}
+
+
+@media (min-width: 1024px) {
+  .hero {
+    padding: 5rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    gap: 2.5rem; /* un peu plus d’espace entre les cartes */
+  }
+
+  #avis form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 3rem;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  }
+
+  #avis form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  #avis form label:nth-child(odd) {
+    grid-column: 1;
+  }
+
+  #avis form label:nth-child(even) {
+    grid-column: 2;
+  }
+
+  /* Champs textarea et avis prennent toute la largeur */
+  #avis form textarea,
+  #avis form select {
+    grid-column: 1 / -1;
+  }
+
+  #avis #message {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    font-weight: 500;
+    color: var(--primary);
+  }
+}

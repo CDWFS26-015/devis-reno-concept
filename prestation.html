@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/png" href="images/logo.png">
+  <title>Prestations – Devis Rénovation Concept</title>
+  <meta name="description" content="Prestations et avis clients – Devis Rénovation Concept">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<a href="#contenu" class="skip-link">Aller au contenu</a>
+
+<header class="header">
+  <div class="logo">
+    <a href="index.html" class="logo-link">
+      <img src="images/logo.png" alt="Logo Devis Rénovation Concept">
+      <span>Devis Rénovation Concept</span>
+    </a>
+  </div>
+
+  <nav class="nav" aria-label="Navigation principale">
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">☰</button>
+    <ul id="menu" class="menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="prestation.html" class="active">Prestations</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="contenu">
+
+<section class="services">
+  <h2>Nos prestations</h2>
+  <div class="services-grid">
+    <article>
+      <img src="https://placehold.co/600x400/c0392b/e74c3c?text=Peinture" alt="Peinture intérieure">
+      <h3>Peinture intérieure</h3>
+      <p>Finitions soignées pour appartements et maisons. Enduits, revêtements muraux, plafonds et décoration artisanale.</p>
+    </article>
+    <article>
+      <img src="https://placehold.co/600x400/e74c3c/c0392b?text=Isolation" alt="Isolation thermique">
+      <h3>Isolation thermique</h3>
+      <p>Isolation intérieure et extérieure pour réduire les pertes énergétiques et améliorer le confort. Pose d’isolants et peintures thermo-isolantes certifiées CEE.</p>
+    </article>
+    <article>
+      <img src="https://placehold.co/600x400/c0392b/e74c3c?text=Enduits" alt="Enduits">
+      <h3>Enduits</h3>
+      <p>Travaux de ratissage et finitions murales durables avec enduits de qualité Acti-Pro. À partir de 15€ HT/m².</p>
+    </article>
+    <article>
+      <img src="https://placehold.co/600x400/e74c3c/c0392b?text=Ravalement" alt="Ravalement / rénovation">
+      <h3>Ravalement / rénovation</h3>
+      <p>Ravalement de façades et rénovation complète, traitement des murs et valorisation de votre bien.</p>
+    </article>
+    <article>
+      <img src="https://placehold.co/600x400/c0392b/e74c3c?text=Parquet" alt="Pose de parquet">
+      <h3>Pose de parquet</h3>
+      <p>Parquets et sols souples posés avec précision, finition impeccable et durable. Prix indicatif : 16€ HT/m².</p>
+    </article>
+    <article>
+      <img src="https://placehold.co/600x400/e74c3c/c0392b?text=Home+Staging" alt="Home Staging & Décoration">
+      <h3>Home Staging & Décoration</h3>
+      <p>Valorisation de votre logement pour vente ou location. Conseils, mise en place et finitions artisanales.</p>
+    </article>
+  </div>
+</section>
+
+<section class="tarifs" id="tarifs">
+  <h2>Tarifs indicatifs</h2>
+  <ul>
+    <li>Peinture : <span>14 à 25€/m²</span></li>
+    <li>Parquet : <span>16€/m²</span></li>
+    <li>Plâtre / enduit : <span>17€/m²</span></li>
+    <li>Isolation : <span>89€/m² (pose complète)</span></li>
+    <li>Main d’œuvre : <span>45€/h</span></li>
+  </ul>
+  <p>Prix hors fournitures et options, selon complexité du projet. Livraison clé en main et garantie décennale.</p>
+</section>
+
+<section id="avis">
+  <h2>Laisser un avis</h2>
+  <form id="avisForm" method="post" novalidate>
+    
+    <label>
+      <span class="label-text">Nom<span class="required">*</span></span>
+      <input required name="nom">
+    </label>
+
+    <label>
+      <span class="label-text">Prénom</span>
+      <input name="prenom">
+    </label>
+
+    <label>
+      <span class="label-text">Ville<span class="required">*</span></span>
+      <input required name="ville">
+    </label>
+
+    <label>
+      <span class="label-text">Avis<span class="required">*</span></span>
+      <textarea required name="avis"></textarea>
+    </label>
+
+    <label>
+      <span class="label-text">Note<span class="required">*</span></span>
+      <select required name="note">
+        <option value="">Choisir</option>
+        <option>5</option>
+        <option>4</option>
+        <option>3</option>
+        <option>2</option>
+        <option>1</option>
+      </select>
+    </label>
+
+    <button type="submit">Ajouter mon avis</button>
+    <p id="message" aria-live="polite"></p>
+  </form>
+</section>
+
+
+<section>
+  <h2>Avis clients</h2>
+  <ul id="avisList"></ul>
+</section>
+
+<button id="topBtn" aria-label="Retour en haut">↑</button>
+
+</main>
+
+<footer>
+  <address>
+    <p>📍 Chartres</p>
+    <p>📞 06 13 72 63 66</p>
+    <p>✉️ sos.peintre@gmail.com</p>
+  </address>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
